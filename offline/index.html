@@ -1,0 +1,46 @@
+<html>
+    <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="https://cdn.glitch.me/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2Fimageonline-co-overlayed-image%20(3).png?v=1635781128145"
+  /><title>The Bookshelf - Offline</title>
+  <script async src="https://arc.io/widget.min.js#QhbuAwqB"></script>
+  <meta http-equiv="Refresh" content="10; url='/" />
+  <center>
+<style>
+  html{
+  background-color: Black;
+  color: WHITE;
+  }
+  h1 {
+    background-image: url("https://cdn.glitch.me/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2Fimageonline-co-overlayed-image%20(3).png?v=1635781128145");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+</style>
+<h1>
+    <br><br><br><br><br><br><br>
+    The Bookshelf is offline
+    <br><br><br><br><br><br><br>
+    </h1>
+  <h2>
+    The Bookshelf is currently offline for updates/errors please check again later!
+  </h2>
+    <h3>Trying again in <span id="countdowntimer">10</span></h3>
+    <h4>
+    <!--  Bored? Play a game here: <a href="/offline/games">click me</a><br>-->
+      Bored? Draw something here: <a href="/offline/arts">click me</a>
+    </h4>
+
+<script type="text/javascript">
+    var timeleft = 10;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
+</script>
+
+  </center>
+</html>

@@ -1,0 +1,727 @@
+<!DCTYPE html>
+<html lang="en">
+<head>
+	<title>The Bookshelf</title>
+<link rel="shortcut icon" href="https://cdn.glitch.com/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FTheBookshelf.png?v=1632929942377">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+    src="http://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
+  </script>
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="js/bootstrap/bootstrap.min.js">
+<script async src="https://arc.io/widget.min.js#QhbuAwqB"></script>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+</head>
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button> 
+	<body>
+	<!-- Navbar -->
+      	<div class="darkmode" id="dark-mode">
+  	<div class="topnav" id="myTopnav">
+    <h1><img
+              class="masthead-brand"
+              src="https://cdn.glitch.com/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FTheBookshelf.png?v=1632929942377"
+              alt="Logo Icon"
+              width="50"
+              height="50"
+            />
+      The Bookshelf
+    </h1>
+      <a href="/the-book-list">The BookList</a>
+      <a href="/add-your-book">Add Your Book</a>
+      <a href="/audio">Audio Books</a>
+      <a href="/Downloads">Downloads</a>
+    <a href="/search">Search &#128269;</a>
+		  	  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div> 
+    </div>
+  </body>
+  
+<body>
+	<!-- Header (Banner) -->
+        	<section id="banner2" class="parallax">
+	</section>
+
+</div>
+<br>
+  </div>
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+            
+
+	<!-- End Header -->
+ <section class="white">
+  <header id="about" class="parallax">
+
+  <style>
+      #canvas_container {
+          width: 750px;
+          height: 800px;
+          overflow: auto;
+        text-align:center;
+      }
+
+      #canvas_container {
+        background: #333;
+        text-align: center;
+    }
+     button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+         input {
+  background-color: WHITE; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+     body {
+  background-color: #353535; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+    #time{
+  font-size: 30px;
+}
+  </style>
+<center>
+<body>
+  <h2>
+    Please wait this can take about 1-2 minutes to load... (also if a page is blank try going to the next page)
+  </h2>
+     <div id="my_pdf_viewer">
+        <div id="canvas_container">
+            <canvas id="pdf_renderer"></canvas>
+        </div>
+
+        <div id="navigation_controls">
+            <button id="go_previous">Previous</button>
+            <input id="current_page" value="1" type="number"/>
+            <button id="go_next">Next</button> 
+        </div>
+    </div>
+    <script>
+        var myState = {
+            pdf: null,
+            currentPage: 1,
+            zoom: 1
+        }
+     
+        pdfjsLib.getDocument('https://cdn.glitch.me/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FThe%20Dragonet%20Prophecy%20By%20Tui%20T%20Sutherland-pdfread.net.pdf?v=1635964153415').then((pdf) => {
+     
+            myState.pdf = pdf;
+            render();
+
+        });
+
+        function render() {
+            myState.pdf.getPage(myState.currentPage).then((page) => {
+         
+                var canvas = document.getElementById("pdf_renderer");
+                var ctx = canvas.getContext('2d');
+     
+                var viewport = page.getViewport(myState.zoom);
+
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+         
+                page.render({
+                    canvasContext: ctx,
+                    viewport: viewport
+                });
+            });
+        }
+
+        document.getElementById('go_previous').addEventListener('click', (e) => {
+            if(myState.pdf == null || myState.currentPage == 1) 
+              return;
+            myState.currentPage -= 1;
+            document.getElementById("current_page").value = myState.currentPage;
+            render();
+        });
+
+        document.getElementById('go_next').addEventListener('click', (e) => {
+            if(myState.pdf == null || myState.currentPage > myState.pdf._pdfInfo.numPages) 
+               return;
+            myState.currentPage += 1;
+            document.getElementById("current_page").value = myState.currentPage;
+            render();
+        });
+
+        document.getElementById('current_page').addEventListener('keypress', (e) => {
+            if(myState.pdf == null) return;
+         
+            // Get key code
+            var code = (e.keyCode ? e.keyCode : e.which);
+         
+            // If key code matches that of the Enter key
+            if(code == 13) {
+                var desiredPage = 
+                document.getElementById('current_page').valueAsNumber;
+                                 
+                if(desiredPage >= 1 && desiredPage <= myState.pdf._pdfInfo.numPages) {
+                    myState.currentPage = desiredPage;
+                    document.getElementById("current_page").value = desiredPage;
+                    render();
+                }
+            }
+        });
+    </script>
+    </h5></header>
+	<!-- End about section -->
+  </section>
+        
+
+	<script>
+		function myFunction() {
+		    var x = document.getElementById("myTopnav");
+		    if (x.className === "topnav") {
+		        x.className += " responsive";
+		    } else {
+		        x.className = "topnav";
+		    }
+		}
+	</script>
+       <style>.dark-mode {
+  background-color: #353535;
+  color: white;
+}</style>
+	<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+	    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	        document.getElementById("myBtn").style.display = "block";
+	    } else {
+	        document.getElementById("myBtn").style.display = "none";
+	    }
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	    document.body.scrollTop = 0;
+	    document.documentElement.scrollTop = 0;
+	}
+	</script>
+        	<section id="banner" class="parallax">
+	</section>
+<footer>	<div class="footer" id="myFooter">
+      <a href="/the-book-list">The BookList</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://forms.gle/RDXkAYe4bAxhsryZ8">Add Your Book</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/audio">Audio Books</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/Downloads">Downloads</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a onclick="darkMode();">Toggle Darkmode</a>
+  </div>   </footer>
+<script>  
+    function darkMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+    }
+  </script>
+  </body>
+</center>
+<style>@-ms-viewport{
+    width:device-width
+}
+html{
+    box-sizing:border-box;
+    -ms-overflow-style:scrollbar
+}
+*,::after,::before{
+    box-sizing:inherit
+}
+
+html,body {
+	font-family: 'PT Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+h1 {
+      color: white;
+}
+
+hr {
+	max-width: 420px;
+	color: #718093;
+}
+
+p {
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'PT Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.parallax {
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+footer {
+  text-align:center;
+  color: white;
+}
+
+a {
+	text-decoration: none;
+	color: #5352ed;
+	transition: all .2s ease-in;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #192a56;
+	transition: all .2s ease-in;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #3498db;
+    cursor: pointer;
+    padding: 15px;
+    padding-right: 19px;
+    padding-left: 19px;
+    font-size: 18px;
+    transition: all .2s ease-in;
+}
+
+#myBtn:hover {
+    transition: all .2s ease-in;
+}
+
+/* Navbar */
+
+.topnav {
+	list-style-type: none;
+    overflow: hidden;
+    box-shadow: 0px 6px 13px -7px rgba(0,0,0,0.20);
+    transition: all .2s ease-in;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 24px 26px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  body {
+    text-align:center;
+  }
+
+.topnav a:hover {
+    color: #3498db;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  div .max-width {
+    max-width: 60%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+}
+
+/* End Navbar */
+
+#head {
+	background-image: url("https://i.ibb.co/nR9WnRf/imageonline-co-overlayed-image-37.png");
+	margin: 0;
+	padding: 222px 0px 222px 0px;
+	text-align: center;
+	color: BLACK;
+}
+
+#head h1 {
+	font-size: 55px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+#head h3 {
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+#about {
+	margin: 10px;
+	text-align: center;
+	padding-top: 66px;
+	padding-bottom: 66px;
+}
+
+#about h1 {
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: 15px;
+}
+
+#about .features {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 66px;
+}
+
+#about .feature {
+	font-size: 60px;
+	color: #353535;
+	margin-top: 17px;
+}
+
+#about h2 {
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+#about p {
+	margin-top: 3px;
+	font-size: 18px;
+}
+#about .white {
+	background-color: #353535;
+    padding: 0;
+    margin: -10px;
+}
+  #about {
+      height: 1000px;
+  }
+
+#banner {
+	background-image: url("https://i.ibb.co/nR9WnRf/imageonline-co-overlayed-image-37.png");
+	padding: 75px 0px 75px 0px;
+	text-align: center;
+}
+
+#banner2 {
+	background-image: url("https://i.ibb.co/nR9WnRf/imageonline-co-overlayed-image-37.png");
+	padding: 75px 0px 75px 0px;
+	text-align: center;
+  color: black;
+}
+
+#banner3 {
+	background-image: url("https://i.ibb.co/nR9WnRf/imageonline-co-overlayed-image-37.png");
+	padding: 75px 0px 75px 0px;
+	text-align: center;
+}
+
+#banner h1 {
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: white;
+}
+
+#banner h2 {
+	margin-top: 5px;
+	font-size: 20px;
+	color: white;
+}
+
+#banner2 h1 {
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: white;
+}
+
+#banner2 h2 {
+	margin-top: 5px;
+	font-size: 20px;
+	color: white;
+}
+
+#banner3 h1 {
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: white;
+}
+
+#banner3 h2 {
+	margin-top: 5px;
+	font-size: 20px;
+	color: white;
+}
+
+#staff {
+	margin: 10px;
+	text-align: center;
+	padding-top: 66px;
+	padding-bottom: 66px;
+}
+
+#staff h1 {
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: 15px;
+}
+
+#staff h2 {
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+#staff p {
+	margin-top: 3px;
+	font-size: 18px;
+}
+
+#staff .stafflist {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 66px;
+}
+
+#staff .staffblock {
+	transform: none;
+	transition: all .2s ease-in;
+	margin-bottom: 5px;
+}
+
+#staff .staffblock:hover {
+	transform: scale(1.1,1.1);
+	transition: all .2s ease-in;
+}
+
+#gamemodes {
+	margin: 10px;
+	text-align: center;
+	padding-top: 66px;
+	padding-bottom: 66px;
+}
+
+#gamemodes h1 {
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: 15px;
+}
+
+#gamemodes h2 {
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+#gamemodes p {
+	margin-top: 3px;
+	font-size: 18px;
+}
+
+#gamemodes .gray {
+	background-color: #808080;
+    padding: 0;
+    margin: -10px;
+}
+
+#gamemodes .mode {
+	margin: 15px;
+	text-align: left;
+	padding: 50px;
+	max-width: 1280px;
+}
+
+#gamemodes .mode-inv {
+	margin: 15px;
+	text-align: right;
+	padding: 50px;
+	max-width: 1280px
+}
+
+@media screen and (min-width: 800px) {
+	#gamemodes .img {
+		margin: 15px;
+		padding: 50px;
+		max-width: 1280px
+	}
+}
+
+@media screen and (max-width: 799px) {
+	#gamemodes .img {
+		padding: 50px 0px 50px 0px;
+	}
+}
+
+#gamemodes .fixed-width {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+#vote {
+	margin: 10px;
+	text-align: center;
+	padding-top: 66px;
+	padding-bottom: 66px;
+}
+
+#vote h1 {
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: 15px;
+}
+
+#vote h2 {
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+#vote p {
+	margin-top: 3px;
+	font-size: 18px;
+}
+
+#vote .votelist {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 66px;
+	padding-bottom: 66px;
+}
+
+#vote .voteblock {
+	transform: none;
+	transition: all .2s ease-in;
+}
+
+.voteblock a {
+	font-weight: 700;
+}
+
+
+
+
+.footer {
+	max-width: 1280px;
+	margin: 0 auto;
+	float: none;
+	padding-top: 66px;
+	padding-bottom: 66px;
+}
+
+.copyright-notice {
+	color: #30343a;
+	margin: 0;
+	margin-bottom: 0px;
+	padding: 0;
+	text-align: center;
+	transition: all .2s ease-in;
+	cursor: default;
+}
+
+.copyright-notice:hover {
+	color: white;
+	margin: 0;
+	margin-bottom: 0px;
+	padding: 0;
+	text-align: center;
+	transition: all .2s ease-in;
+}
+
+@media screen and (min-width: 800px) {
+	.res-img {
+		width: 480px;
+	}
+}
+
+@media screen and (max-width: 799px) {
+	.res-img {
+		width: 100%;	}
+}
+
+@media screen and (min-width: 800px) {
+	.res-img-sm {
+		height: 110px;
+	}
+}
+
+@media screen and (max-width: 799px) {
+	.res-img-sm {
+		width: 100%;	}
+}</style>
+</html>

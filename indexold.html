@@ -1,0 +1,332 @@
+<html manifest="/offline.manifest">
+  <title>The Bookshelf</title>
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="https://cdn.glitch.com/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FTheBookshelf.png?v=1632929942377"
+  />
+  <head>
+    <script async src="https://arc.io/widget.min.js#QhbuAwqB"></script>
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7497a6a8a4474aafb47d2d9f8a664607"}'></script><!-- End Cloudflare Web Analytics -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans:700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans:400"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+      integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans:700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans:400"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/bootstrap/bootstrap-grid.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="js/bootstrap/bootstrap.min.js"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+      integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Center the loader */
+             #loader {
+        z-index: 0;
+        width: 500px;
+        height: 500px;
+        background-image: url("https://cdn.glitch.me/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2Floading-unscreen.gif?v=1633982232140");
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-position: center;
+      }
+            .animate-bottom {
+        position: relative;
+        -webkit-animation-name: animatebottom;
+        -webkit-animation-duration: 1s;
+        animation-name: animatebottom;
+        animation-duration: 1s;
+      }
+            .animate-bottom {
+        position: relative;
+        -webkit-animation-name: animatebottom;
+        -webkit-animation-duration: 1s;
+        animation-name: animatebottom;
+        animation-duration: 1s;
+      }
+
+      /* Add animation to "page content" */
+
+      @-webkit-keyframes animatebottom {
+        from {
+          bottom: -100px;
+          opacity: 0;
+        }
+        to {
+          bottom: 0px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes animatebottom {
+        from {
+          bottom: -100px;
+          opacity: 0;
+        }
+        to {
+          bottom: 0;
+          opacity: 1;
+        }
+      }
+
+      #myDiv {
+        display: none;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onload="myFunction()" style="margin:0;">
+    <center><div id="loader"></div></center>
+
+    <script>
+      var myVar;
+
+      function myFunction() {
+        myVar = setTimeout(showPage, 5000);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
+    </script>
+
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<style type="text/css">
+#overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+filter:alpha(opacity=70);
+-moz-opacity:0.7;
+-khtml-opacity: 0.7;
+opacity: 0.7;
+z-index: 100;
+display: none;
+}
+.cnt223 a{
+text-decoration: none;
+}
+.popup{
+width: 100%;
+margin: 0 auto;
+display: none;
+position: fixed;
+z-index: 101;
+}
+.cnt223{
+min-width: 600px;
+width: 600px;
+min-height: 150px;
+margin: 100px auto;
+background: #f3f3f3;
+position: relative;
+z-index: 103;
+padding: 15px 35px;
+border-radius: 5px;
+box-shadow: 0 2px 5px #000;
+}
+.cnt223 p{
+clear: both;
+    color: #555555;
+    /* text-align: justify; */
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.cnt223 p a{
+color: #d91900;
+font-weight: bold;
+}
+  .cnt223 h1{
+color: #d91900;
+font-weight: bold;
+}
+  
+.cnt223 .x{
+float: right;
+height: 35px;
+left: 22px;
+position: relative;
+top: -25px;
+width: 34px;
+}
+.cnt223 .x:hover{
+cursor: pointer;
+}
+</style><!--
+<script type='text/javascript'>
+$(function(){
+var overlay = $('<div id="overlay"></div>');
+overlay.show();
+overlay.appendTo(document.body);
+$('.popup').show();
+$('.close').click(function(){
+$('.popup').hide();
+overlay.appendTo(document.body).remove();
+return false;
+});
+
+
+ 
+
+$('.x').click(function(){
+$('.popup').hide();
+overlay.appendTo(document.body).remove();
+return false;
+});
+});
+</script>
+<div class='popup'>
+<div class='cnt223'>
+<h1>Notice</h1>
+<p>
+We are currently converting all books into pdfs so some books may not work. We are trying to do this as fast as possible so everything is smooth for you.
+<br/>
+<br/>
+<a href='' class='close'>Close</a>
+</p>
+</div>
+</div> -->
+
+      
+      <style>
+        body {
+          background-image: url("https://i.ibb.co/nR9WnRf/imageonline-co-overlayed-image-37.png");
+        }
+        h1 {
+          color: white;
+          text-align: center;
+        }
+        h2 {
+          color: white;
+          text-align: center;
+        }
+        h3 {
+          text-align: center;
+          color: white;
+        }
+        h4 {
+          text-align: center;
+          color: white;
+        }
+        h5 {
+          text-align: right;
+          color: white;
+        }
+        p {
+          text-align: center;
+          color: white;
+        }
+
+        a {
+          text-align: center;
+          color: white;
+        }
+        h5 {
+          text-align: center;
+          color: white;
+        }
+      </style>
+      <center>
+        <h1>
+          <font size="+5">
+            <img
+              class="masthead-brand"
+              src="https://cdn.glitch.com/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FTheBookshelf.png?v=1632929942377"
+              alt="Logo Icon"
+              width="50"
+              height="50"
+            />
+            The Bookshelf</font
+          >
+        </h1>
+        <div style="background-color: #000000; height:30px;">
+          <a href="/the-book-list">The BookList</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+            href="/CL"
+            >Changelog</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;<a href="/WIP">Upcoming Books</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;<a href="/FAQ">FAQ</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://forms.gle/RDXkAYe4bAxhsryZ8"
+            >Add Your Book</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;<a href="/audio">Audio Books</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Downloads">Downloads</a>
+        </div>
+      </center>
+      <br />
+      <br />
+      <br />
+      <h2>WELCOME</h2>
+      <p>
+        Welcome to The Bookshelf a place where you publish your<br />
+        books and read other's books. Want to publish a book.
+      </p>
+      <h4>
+        <font size="+1"><a href="/the-book-list">Get Started</a></font>
+      </h4>
+      <h5>
+        <br />
+        <br />
+        <br />
+        <style>
+          a {
+            text-align: center;
+            color: white;
+          }
+        </style>
+      </h5>
+    </div>
+  </body>
+</html>
