@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Bookshelf</title>
+<link rel="shortcut icon" href="https://cdn.glitch.com/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FTheBookshelf.png?v=1632929942377">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="https://thebookshelf.ga/css/h.css">
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+<script async src="https://arc.io/widget.min.js#QhbuAwqB"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="js/bootstrap/bootstrap.min.js">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+</head>
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button> 
+	<body>
+	<!-- Navbar -->
+      	<div class="darkmode" id="dark-mode">
+  	<div class="topnav" id="myTopnav">
+    <h1><img
+              class="masthead-brand"
+              src="https://cdn.glitch.com/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FTheBookshelf.png?v=1632929942377"
+              alt="Logo Icon"
+              width="50"
+              height="50"
+            />
+      The Bookshelf
+    </h1>
+      <a href="/the-book-list">The BookList</a>
+      <a href="/add-your-book">Add Your Book</a>
+      <a href="/audio">Audio Books</a>
+      <a href="/Downloads">Downloads</a>
+    <a href="/search">Search &#128269;</a>
+		  	  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div> 
+    </div>
+  </body>
+  
+<body>
+	<!-- Header (Banner) -->
+	<header id="head" class="parallax">
+		<h1>TheBookshelf - Search</h1>
+  </header>
+
+</div>
+<br>
+  </div>
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+            
+
+	<!-- End Header -->
+ <section class="white">
+  <header id="about" class="parallax">
+ <style>
+      #searchbar {
+        margin-left: 15%;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      input[type="text"] {
+        width: 30%;
+        -webkit-transition: width 0.15s ease-in-out;
+        transition: width 0.15s ease-in-out;
+      }
+
+      /* When the input field gets focus,
+		change its width to 100% */
+      input[type="text"]:focus {
+        width: 70%;
+      }
+
+      #list {
+        font-size: 1.5em;
+        margin-left: 90px;
+      }
+
+      .book {
+        display: list-item;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- input tag -->
+    <input
+      id="searchbar"
+      onkeyup="search_book()"
+      type="text"
+      name="search"
+      placeholder="Search books.."
+    />
+
+    <!-- ordered list -->
+    <ol id="list">
+      <li class="book"><a href="/books/AL">Astroneer Life</a></li>
+            <li class="book"><a href="/books/RB">Roblox Bedwars</a></li>            
+      <li class="book"><a href="/books/RB2">Roblox Bedwars: Book 2</a></li>
+            <li class="book"><a href="/books/RB3">Roblox Bedwars: Book 3</a></li>
+            <li class="book"><a href="/books/CD">CURRUPTED DOC</a></li>
+            <li class="book"><a href="/books/CATCF">Charlie and the chocalte factory</a></li>
+            <li class="book"><a href="/books/IS1">I survived the sinking of the titanic of 1912</a></li>
+
+      <li class="book"><a href="/books/DOAWK">Diary Of A Wimpy Kid</a></li>
+      <li class="book">
+        <a href="/books/DOAWKRR">Diary Of A Wimpy Kid: Rodrick Rules</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKTLS">Diary Of A Wimpy Kid: The Last Straw</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKDD">Diary Of A Wimpy Kid: Dog Days</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKTUT">Diary Of A Wimpy Kid: The Ugly Truth</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKCF">Diary Of A Wimpy Kid: Cabin Fever</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKTTW">Diary Of A Wimpy Kid: The Third Wheel</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKHL">Diary Of A Wimpy Kid: Hard Luck</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKTHL">Diary Of A Wimpy Kid: The Long Haul</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKOS">Diary Of A Wimpy Kid: Old School</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWK_DD">Diary Of A Wimpy Kid: Double Down</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKTG">Diary Of A Wimpy Kid: The Getaway</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKTM">Diary Of A Wimpy Kid: The Meltdown</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKWB">Diary Of A Wimpy Kid: Wrecking Ball</a>
+      </li>
+      <li class="book">
+        <a href="/books/DOAWKTDE">Diary Of A Wimpy Kid: The Deep End</a>
+      </li>
+      <li class="book">
+        <a href="/books/HPSS">Harry Potter: Sourcer's Stone</a>
+      </li>
+      <li class="book">
+        <a href="/books/HPCOS">Harry Potter: Chamber Of Secrets</a>
+      </li>
+      <li class="book">
+        <a href="/books/HPTPOA">Harry Potter: The Prisoner of Azkaban</a>
+      </li>
+      <li class="book">
+        <a href="/books/HPGOF">Harry Potter: The Goblet of Fire</a>
+      </li>
+      <li class="book"><a href="/books/JAP">Jokes And Puns</a></li>
+      <li class="book"><a href="/books/MJAP">More Jokes And Puns</a></li>
+      <li class="book"><a href="/books/EMJAP">Even More Jokes And Puns</a></li>
+                  <li class="book">
+        <a href="/books/LC">Lagan Chronicles</a>
+      </li>
+      <li class="book">
+        <a href="/books/PJLT">Percy Jackson: The Lighting Theif</a>
+      </li>
+      <li class="book">
+        <a href="/books/PJSOM">Percy Jackson: Sea Of Monsters</a>
+      </li>
+      <li class="book">
+        <a href="/books/PJTC">Percy Jackson: The Titans Curse</a>
+      </li>
+      <li class="book">
+        <a href="/books/PJBOTL">Percy Jackson: The Battle of the Labyrinth</a>
+      </li>
+      <li class="book">
+        <a href="/books/SHTMOTSJ"
+          >Sherlock Holmes: The mystery of the stolen jewl</a
+        >
+      </li>
+      <li class="book">
+        <a href="/books/SHTMOTSJ2"
+          >Sherlock Holmes: The mystery of the stolen jewl 2</a
+        >
+      </li>
+      <li class="book">
+        <a href="/books/SHTMOTSJ3"
+          >Sherlock Holmes: The mystery of the stolen jewl 3</a
+        >
+      </li>
+      <li class="book"><a href="/books/TCOE">The City Of Ember</a></li>
+      <li class="book">
+        <a href="/books/TPOS">The City Of Ember: People Of Sparks</a>
+      </li>
+      <li class="book">
+        <a href="/books/TDOD">The City Of Ember: The Diamond Of Darkhold</a>
+      </li>
+      <li class="book">
+        <a href="/books/TPOY">The City Of Ember: The Prophet Of Yonword</a>
+      </li>
+      <li class="book"><a href="/books/VTO">Vector Takes Over The World</a></li>
+      <li class="book"><a href="/books/VTO2">Vector Takes Over The World: 2</a></li>
+      <li class="book"><a href="/books/WIT">Wrinkle In Time</a></li>
+      <li class="book">
+        <a href="/books/SSFW">Sideways stories from wayside school</a>
+      </li>
+      <li class="book">
+        <a href="/books/WSIFD">Wayside school is falling down</a>
+      </li>
+      <li class="book">
+        <a href="/books/WSGLS">Wayside School Gets a little stranger</a>
+      </li>
+      <li class="book">
+        <a href="/books/WSBTCD">Wayside School Beneath The Cloud Of Doom</a>
+      <li class="book"> 
+        <a href="/books/13st">The 13 story treehouse</a>
+      </li>
+<li class="book">
+      <a href="/books/26st">The 26 Story Treehouse</a>
+      </li>
+      <li class="book">
+      <a href="/books/WOF">Wings of fire</a>
+      </li>
+            <li class="book">
+      <a href="/books/WOF2">Wings of fire: book 2</a>
+      </li>
+          <div class="end">And more coming soon!</div>
+    </ol>
+
+    <!-- linking javascript -->
+    <script>
+      // JavaScript code
+      function search_book() {
+        let input = document.getElementById("searchbar").value;
+        input = input.toLowerCase();
+        let x = document.getElementsByClassName("book");
+
+        for (i = 0; i < x.length; i++) {
+          if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display = "none";
+          } else {
+            x[i].style.display = "list-item";
+          }
+        }
+      }
+    </script></header>
+	<!-- End about section -->
+  </section>
+        
+
+	<script>
+		function myFunction() {
+		    var x = document.getElementById("myTopnav");
+		    if (x.className === "topnav") {
+		        x.className += " responsive";
+		    } else {
+		        x.className = "topnav";
+		    }
+		}
+	</script>
+       <style>.dark-mode {
+  background-color: #353535;
+  color: white;
+}</style>
+	<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+	    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	        document.getElementById("myBtn").style.display = "block";
+	    } else {
+	        document.getElementById("myBtn").style.display = "none";
+	    }
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	    document.body.scrollTop = 0;
+	    document.documentElement.scrollTop = 0;
+	}
+	</script>
+        	<section id="banner" class="parallax">
+	</section>
+<footer>	<div class="footer" id="myFooter">
+      <a href="/the-book-list">The BookList</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://forms.gle/RDXkAYe4bAxhsryZ8">Add Your Book</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/audio">Audio Books</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/Downloads">Downloads</a>&nbsp;&nbsp;&nbsp;&nbsp;
+     <a class="btn-toggle">Toggle Dark-Mode</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>   </footer>
+<script>  
+      function orangeMode() {
+  var element = document.body;
+  element.classList.toggle("orange-mode");
+    }
+  </script>
+  <style>
+  body {
+  --bkg-color: #fff;
+}
+body.dark-theme {
+  color: WHITE;
+  --bkg-color: #353535;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --bkg-color: #121212;
+  }
+  body.light-theme {
+    --bkg-color: #fff;
+  }
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bkg-color);
+}
+
+h1,
+p {
+  color: var(--text-color);
+}
+
+  </style>
+  <script>const btn = document.querySelector(".btn-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "dark") {
+  document.body.classList.toggle("dark-theme");
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("light-theme");
+}
+
+btn.addEventListener("click", function () {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("light-theme");
+    var theme = document.body.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+  } else {
+    document.body.classList.toggle("dark-theme");
+    var theme = document.body.classList.contains("dark-theme")
+      ? "dark"
+      : "light";
+  }
+  localStorage.setItem("theme", theme);
+});
+</script>
+  </body>
+</html>
+
+<!--home end>

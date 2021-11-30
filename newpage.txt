@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Bookshelf</title>
+<link rel="shortcut icon" href="https://cdn.glitch.com/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FTheBookshelf.png?v=1632929942377">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+<script async src="https://arc.io/widget.min.js#QhbuAwqB"></script>
+	<link rel="stylesheet" type="text/css" href="https://thebookshelf.ga/css/h.css">
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="js/bootstrap/bootstrap.min.js">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+</head>
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button> 
+	<body>
+	<!-- Navbar -->
+      	<div class="darkmode" id="dark-mode">
+  	<div class="topnav" id="myTopnav">
+    <h1><img
+              class="masthead-brand"
+              src="https://cdn.glitch.com/c7672284-3ea0-4d4f-ae81-0c0e88fef3c9%2FTheBookshelf.png?v=1632929942377"
+              alt="Logo Icon"
+              width="50"
+              height="50"
+            />
+      The Bookshelf
+    </h1>
+      <a href="/the-book-list">The BookList</a>
+      <a href="/add-your-book">Add Your Book</a>
+      <a href="/audio">Audio Books</a>
+      <a href="/Downloads">Downloads</a>
+    <a href="/search">Search &#128269;</a>
+		  	  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div> 
+    </div>
+  </body>
+  
+<body>
+	<!-- Header (Banner) -->
+	<header id="head" class="parallax">
+		<h1>TheBookshelf</h1>
+  </header>
+
+</div>
+<br>
+  </div>
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+            
+
+	<!-- End Header -->
+ <section class="white">
+  <header id="about" class="parallax">
+<!--Code Here-->
+   </header>
+	<!-- End about section -->
+  </section>
+        
+
+	<script>
+		function myFunction() {
+		    var x = document.getElementById("myTopnav");
+		    if (x.className === "topnav") {
+		        x.className += " responsive";
+		    } else {
+		        x.className = "topnav";
+		    }
+		}
+	</script>
+	<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+	    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	        document.getElementById("myBtn").style.display = "block";
+	    } else {
+	        document.getElementById("myBtn").style.display = "none";
+	    }
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	    document.body.scrollTop = 0;
+	    document.documentElement.scrollTop = 0;
+	}
+	</script>
+        	<section id="banner" class="parallax"></section>
+<footer>	<div class="footer" id="myFooter">
+      <a href="/the-book-list">The BookList</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://forms.gle/RDXkAYe4bAxhsryZ8">Add Your Book</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/audio">Audio Books</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/Downloads">Downloads</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="btn-toggle">Toggle Dark-Mode</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>   </footer>
+  <style>
+  body {
+  --bkg-color: #fff;
+}
+body.dark-theme {
+  color: WHITE;
+  --bkg-color: #353535;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --bkg-color: #121212;
+  }
+  body.light-theme {
+    --bkg-color: #fff;
+  }
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bkg-color);
+}
+
+h1,
+p {
+  color: var(--text-color);
+}
+
+  </style>
+  <script>const btn = document.querySelector(".btn-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "dark") {
+  document.body.classList.toggle("dark-theme");
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("light-theme");
+}
+
+btn.addEventListener("click", function () {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("light-theme");
+    var theme = document.body.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+  } else {
+    document.body.classList.toggle("dark-theme");
+    var theme = document.body.classList.contains("dark-theme")
+      ? "dark"
+      : "light";
+  }
+  localStorage.setItem("theme", theme);
+});
+</script>
+  </body>
+</html>
+
+<!--home end>
